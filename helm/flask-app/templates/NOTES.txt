@@ -1,0 +1,13 @@
+Thank you for installing flask-app.
+
+To get the external IP:
+
+kubectl get svc flask-app
+
+To check pods:
+
+kubectl get pods
+
+To verify deployment:
+
+kubectl rollout status deployment/flask-app

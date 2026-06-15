@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+
+metadata:
+  name: flask-alerts
+  namespace: monitoring
+
+spec:
+  groups:
+    - name: flask.rules
+
+      rules:
+        - alert: FlaskPodDown
+
+          expr: up{job="flask-app"} == 0
+
+          for: 2m
+
+          labels:
+            severity: critical
+
+          annotations:
+            summary: Flask application is down
+            description: Flask application has been unreachable for more than 2 minutes.

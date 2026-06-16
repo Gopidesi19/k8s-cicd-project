@@ -23,7 +23,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/<your-username>/k8s-cicd-project.git'
+                    url: 'https://github.com/Gopidesi19/k8s-cicd-project.git'
             }
         }
 
